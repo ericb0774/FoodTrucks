@@ -23,7 +23,7 @@ than a UIBarButtonItem.  I would limit the amount of data shown in the list view
 as it can become quite long, and instead let the user navigate to a details view
 for the info.  I would implement convenience features, such as the ability to
 search by name, menu items, etc.  The list could be sortable by distance from
-the user's current location.  The map annotations whould show the name of their
+the user's current location.  The map annotations would show the name of their
 food truck. The user should be able to retrieve directions to a truck. A truck
 should be easily shareable with friends via messaging apps.  Trucks could have a
 star rating system.  If possible, a separate server store could be used to
