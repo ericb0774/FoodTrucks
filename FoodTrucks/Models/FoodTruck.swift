@@ -11,7 +11,7 @@ import Foundation
 /// A Food Truck model
 ///
 /// Food truck data that is downloaded via the ApiClient is decoded into an
-/// array this model. Only the properties that are required for displaying
+/// array of this model. Only the properties that are required for displaying
 /// details about a food truck are included.
 ///
 struct FoodTruck: Identifiable, Hashable {

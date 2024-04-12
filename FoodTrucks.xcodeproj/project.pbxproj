@@ -46,7 +46,6 @@
 		0767E5AE2812FDF0007CF6E7 /* FoodTruckDetailsViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckDetailsViewTableCell.swift; sourceTree = "<group>"; };
 		0767E5B5281357B2007CF6E7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0767E5B728135B9B007CF6E7 /* FoodTruckMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckMapAnnotation.swift; sourceTree = "<group>"; };
-		0767E5B92813935B007CF6E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0791E78428159D1D008CB250 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		0791E78728159F3B008CB250 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +82,6 @@
 		0767E587281202A3007CF6E7 /* FoodTrucks */ = {
 			isa = PBXGroup;
 			children = (
-				0767E5B92813935B007CF6E7 /* README.md */,
 				0767E596281202A4007CF6E7 /* Info.plist */,
 				0767E588281202A3007CF6E7 /* AppDelegate.swift */,
 				0767E58A281202A3007CF6E7 /* SceneDelegate.swift */,
