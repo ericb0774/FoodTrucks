@@ -67,3 +67,85 @@ extension FoodTruck: Decodable {
         longitude = longitudeValue
     }
 }
+
+extension FoodTruck {
+    static var sampleTrucks: [FoodTruck] = {
+        let json = """
+            [
+                {
+                    "locationid": "1658363",
+                    "applicant": "Treats by the Bay LLC",
+                    "optionaltext": "Prepackaged Kettlecorn",
+                    "location": "201 02ND ST",
+                    "starttime": "6AM",
+                    "endtime": "8PM",
+                    "longitude": "-122.398191346440996",
+                    "latitude": "37.786804480998804"
+                },
+                {
+                    "locationid": "1741751",
+                    "applicant": "San Pancho's Tacos",
+                    "optionaltext": "Tacos, Burritos, Quesadillas, Tortas, Nachos, Hot Dogs,Soda, Water, Fruit Drinks",
+                    "location": "491 BAY SHORE BLVD",
+                    "starttime": "6AM",
+                    "endtime": "10PM",
+                    "longitude": "-122.406909482372015",
+                    "latitude": "37.739576790778216"
+                },
+                {
+                    "locationid": "1657804",
+                    "applicant": "San Francisco Carts & Concessions, Inc. DBA Stanley's Steamers Hot Dogs",
+                    "optionaltext": "Hot dogs, condiments, soft pretzels, soft drinks, coffee, cold beverages, pastries, bakery goods, cookies, ice cream, candy, soups, churros, chestnuts, nuts, fresh fruit, fruit juices, desserts, potato chips and popcorn.",
+                    "location": "233 GEARY ST",
+                    "starttime": "6AM",
+                    "endtime": "12AM",
+                    "longitude": "-122.407130420012038",
+                    "latitude": "37.787443441472988"
+                },
+                {
+                    "locationid": "1337786",
+                    "applicant": "Giant Burrito",
+                    "optionaltext": "Tacos, Burritos, Tostadas, Flautas, Tostadas, Tortas, Pozole Menudo",
+                    "location": "353 BAY SHORE BLVD",
+                    "starttime": "7AM",
+                    "endtime": "6PM",
+                    "longitude": "-122.405736586445613",
+                    "latitude": "37.742140586467507"
+                },
+                {
+                    "locationid": "1585473",
+                    "applicant": "San Francisco Street Foods, Inc.",
+                    "optionaltext": "Hot dogs, condiments, soft pretzels, soft drinks, coffee, cold beverages, pastries, bakery goods, cookies, ice cream, candy, soups, churros, chestnuts, nuts, fresh fruit, fruit juices, desserts, potato chips and popcorn.",
+                    "location": "1 THE EMBARCADERO",
+                    "starttime": "6AM",
+                    "endtime": "12AM",
+                    "longitude": "-122.388426441805734",
+                    "latitude": "37.781846487320465"
+                },
+                {
+                    "locationid": "1656382",
+                    "applicant": "San Francisco Taco Truck",
+                    "optionaltext": "Tacos, Tortas, Burritos",
+                    "location": "345 WILLIAMS AVE",
+                    "starttime": "7AM",
+                    "endtime": "11PM",
+                    "longitude": "-122.399162749748584",
+                    "latitude": "37.730136110166313"
+                },
+                {
+                    "locationid": "1585476",
+                    "applicant": "San Francisco Street Foods, Inc.",
+                    "optionaltext": "Hot dogs, condiments, soft pretzels, soft drinks, coffee, cold beverages, pastries, bakery goods, cookies, ice cream, candy, soups, churros, chestnuts, nuts, fresh fruit, fruit juices, desserts, potato chips and popcorn.",
+                    "location": "100 POST ST",
+                    "starttime": "6AM",
+                    "endtime": "12AM",
+                    "longitude": "-122.403692234115198",
+                    "latitude": "37.788946003107128"
+                }
+            ]
+            """.data(using: .utf8)
+
+        return try! JSONDecoder().decode([FoodTruck].self, from: json!)
+    }()
+}
+

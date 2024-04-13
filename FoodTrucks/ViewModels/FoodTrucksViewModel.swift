@@ -15,8 +15,8 @@ import UIKit
 class FoodTrucksViewModel: ObservableObject {
     let apiClient: APIClient
 
-    private(set) var foodTruckDetails = CurrentValueSubject<[FoodTruckDetailsViewModel], Never>([])
-    private(set) var downloading = CurrentValueSubject<Bool, Never>(false)
+    @Published var foodTruckDetails: [FoodTruckDetailsViewModel] = []
+    @Published var downloading = false
 
     @AppSettings(key: "lastFoodTrucksDownloadHour", defaultValue: nil)
     var lastFoodTrucksDownloadHour: Int?
@@ -44,17 +44,22 @@ class FoodTrucksViewModel: ObservableObject {
 
     /// Asynchronously requests food trucks currently in operation.
     private func downloadFoodTrucksAvailableNow() {
-        guard !downloading.value else { return }
-        downloading.send(true)
+        guard !FoodTrucksApp.runningInPreviewMode else {
+            foodTruckDetails = FoodTruck.sampleTrucks.map { FoodTruckDetailsViewModel(foodTruck: $0) }
+            return
+        }
+
+        guard !downloading else { return }
+        downloading = true
 
         Task {
             do {
-                foodTruckDetails.value = try await apiClient.downloadFoodTruckList().map {
+                foodTruckDetails = try await apiClient.downloadFoodTruckList().map {
                     FoodTruckDetailsViewModel(foodTruck: $0)
                 }
 
                 lastFoodTrucksDownloadHour = Date().hour
-                downloading.send(false)
+                downloading = false
             }
             catch {
                 print("download error: \(error)")
@@ -65,7 +70,7 @@ class FoodTrucksViewModel: ObservableObject {
     private func refreshFoodTrucksDataIfNeeded() {
         if let hour = Date().hour, hour != lastFoodTrucksDownloadHour {
             // Remove old data first.
-            foodTruckDetails.send([])
+            foodTruckDetails = []
 
             downloadFoodTrucksAvailableNow()
         }
