@@ -16,7 +16,7 @@ class FoodTrucksViewModel: ObservableObject {
     let apiClient: APIClient
 
     private(set) var foodTruckDetails = CurrentValueSubject<[FoodTruckDetailsViewModel], Never>([])
-    private(set) var downloading = PassthroughSubject<Bool, Never>()
+    private(set) var downloading = CurrentValueSubject<Bool, Never>(false)
 
     @AppSettings(key: "lastFoodTrucksDownloadHour", defaultValue: nil)
     var lastFoodTrucksDownloadHour: Int?
@@ -44,6 +44,7 @@ class FoodTrucksViewModel: ObservableObject {
 
     /// Asynchronously requests food trucks currently in operation.
     private func downloadFoodTrucksAvailableNow() {
+        guard !downloading.value else { return }
         downloading.send(true)
 
         Task {
