@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var viewModel: FoodTrucksViewModel
+    @Bindable var viewModel: FoodTrucksViewModel
 
     @State var selectedTab: Tab = .list
+    @State var selectedFoodTruckDetailsViewModel: FoodTruckDetailsViewModel?
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            FoodTrucksListView(foodTrucks: $viewModel.foodTruckDetails, selectedTab: $selectedTab)
+            FoodTrucksListView(foodTrucks: $viewModel.foodTruckDetails, selectedTab: $selectedTab, selectedFoodTruckDetailsViewModel: $selectedFoodTruckDetailsViewModel)
                 .tabItem {
                     tabView(.list)
                 }.tag(Tab.list)
 
-            Text("Map Content")
+            FoodTrucksMapView(foodTrucks: $viewModel.foodTruckDetails, selectedFoodTruckViewModel: $selectedFoodTruckDetailsViewModel)
                 .tabItem {
                     tabView(.map)
                 }.tag(Tab.map)

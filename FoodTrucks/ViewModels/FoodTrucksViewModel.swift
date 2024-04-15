@@ -6,18 +6,21 @@
 //
 
 import Combine
+import Observation
 import UIKit
 
 ///
 /// The view model for FoodTrucksViewController.
 ///
 @MainActor
-class FoodTrucksViewModel: ObservableObject {
+@Observable
+class FoodTrucksViewModel {
     let apiClient: APIClient
 
-    @Published var foodTruckDetails: [FoodTruckDetailsViewModel] = []
-    @Published var downloading = false
+    var foodTruckDetails: [FoodTruckDetailsViewModel] = []
+    var downloading = false
 
+    @ObservationIgnored
     @AppSettings(key: "lastFoodTrucksDownloadHour", defaultValue: nil)
     var lastFoodTrucksDownloadHour: Int?
 

@@ -20,6 +20,8 @@
 		079709312BCA18790080C17D /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079709292BCA18790080C17D /* AppSettings.swift */; };
 		079709322BCA18790080C17D /* FoodTruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797092A2BCA18790080C17D /* FoodTruck.swift */; };
 		079709332BCA18790080C17D /* FoodTruckMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0797092B2BCA18790080C17D /* FoodTruckMapAnnotation.swift */; };
+		07E888A52BCC086700461453 /* FoodTrucksMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E888A42BCC086700461453 /* FoodTrucksMapView.swift */; };
+		07E888A72BCC75EF00461453 /* FoodTruckDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E888A62BCC75EF00461453 /* FoodTruckDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		079709292BCA18790080C17D /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		0797092A2BCA18790080C17D /* FoodTruck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTruck.swift; sourceTree = "<group>"; };
 		0797092B2BCA18790080C17D /* FoodTruckMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTruckMapAnnotation.swift; sourceTree = "<group>"; };
+		07E888A42BCC086700461453 /* FoodTrucksMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrucksMapView.swift; sourceTree = "<group>"; };
+		07E888A62BCC75EF00461453 /* FoodTruckDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				074FEEBE2BCA0E87000170C9 /* MainView.swift */,
 				0797091D2BCA114B0080C17D /* FoodTrucksListView.swift */,
 				075FA4872BCB32C9007FD918 /* ActivityIndicatorView.swift */,
+				07E888A42BCC086700461453 /* FoodTrucksMapView.swift */,
+				07E888A62BCC75EF00461453 /* FoodTruckDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				074FEEBF2BCA0E87000170C9 /* MainView.swift in Sources */,
+				07E888A72BCC75EF00461453 /* FoodTruckDetailsView.swift in Sources */,
 				079709302BCA18790080C17D /* APIClient.swift in Sources */,
 				0797092D2BCA18790080C17D /* Date+Helpers.swift in Sources */,
 				0797092F2BCA18790080C17D /* FoodTrucksViewModel.swift in Sources */,
@@ -215,6 +222,7 @@
 				074FEEBD2BCA0E87000170C9 /* FoodTrucksApp.swift in Sources */,
 				079709312BCA18790080C17D /* AppSettings.swift in Sources */,
 				0797091E2BCA114B0080C17D /* FoodTrucksListView.swift in Sources */,
+				07E888A52BCC086700461453 /* FoodTrucksMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
