@@ -24,6 +24,7 @@ class FoodTrucksViewModel {
     @AppSettings(key: "lastFoodTrucksDownloadHour", defaultValue: nil)
     var lastFoodTrucksDownloadHour: Int?
 
+    @ObservationIgnored
     private var cancellables = Set<AnyCancellable>()
 
     init(apiClient: APIClient = APIClient()) {
